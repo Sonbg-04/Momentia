@@ -1,6 +1,6 @@
-import React, { useState, useMemo, useRef } from "react";
+import { useState, useMemo, useRef } from "react";
 import { Button } from "../ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Card, CardContent } from "../ui/card";
 import { Badge } from "../ui/badge";
 import { Input } from "../ui/input";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
@@ -18,12 +18,10 @@ import {
   Users,
   Search,
   Filter,
-  SlidersHorizontal,
   ChevronDown,
   Grid3X3,
   List,
   Clock,
-  Award,
   CheckCircle,
   TrendingUp,
 } from "lucide-react";

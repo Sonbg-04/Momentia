@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Badge } from "../ui/badge";
 import {
   Card,
   CardContent,
-  CardHeader,
-  CardTitle,
 } from "../ui/card";
 import {
   Dialog,
@@ -40,7 +38,6 @@ import {
   MessageCircle,
   XCircle,
   Edit,
-  Play,
   Check,
   FileX,
 } from "lucide-react";

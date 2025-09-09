@@ -183,7 +183,11 @@ function ChartTooltipContent({
 
           return (
             <div
-              key={item.dataKey}
+              key={
+                typeof item.dataKey === "function"
+                  ? String(item.name ?? index)
+                  : String(item.dataKey ?? item.name ?? index)
+              }
               className={cn(
                 "[&>svg]:text-muted-foreground flex w-full flex-wrap items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5",
                 indicator === "dot" && "items-center"
@@ -253,11 +257,17 @@ function ChartLegendContent({
   payload,
   verticalAlign = "bottom",
   nameKey,
-}: React.ComponentProps<"div"> &
-  Pick<RechartsPrimitive.LegendProps, "payload" | "verticalAlign"> & {
-    hideIcon?: boolean;
-    nameKey?: string;
-  }) {
+}: React.ComponentProps<"div"> & {
+  payload?: Array<{
+    dataKey?: string;
+    value?: string;
+    color?: string;
+    [key: string]: any;
+  }>;
+  verticalAlign?: "top" | "bottom" | "middle";
+  hideIcon?: boolean;
+  nameKey?: string;
+}) {
   const { config } = useChart();
 
   if (!payload?.length) {

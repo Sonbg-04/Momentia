@@ -5,7 +5,6 @@ import { PhotographerBookings } from "./photographer/PhotographerBookings";
 import { PhotographerChat } from "./photographer/PhotographerChat";
 import { PhotographerProfile } from "./photographer/PhotographerProfile";
 import { PhotographerEditProfile } from "./photographer/PhotographerEditProfile";
-// PhotographerWallet import removed - wallet features disabled
 import { PhotographerChangePassword } from "./photographer/PhotographerChangePassword";
 import { AppLayoutWithSidebar } from "./AppLayoutWithSidebar";
 

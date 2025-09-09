@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { CustomerEditProfile } from "./CustomerEditProfile";
 import { CustomerBookings } from "./CustomerBookings";
 import { Button } from "../ui/button";

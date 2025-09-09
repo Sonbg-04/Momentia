@@ -1,4 +1,3 @@
-/*! tailwindcss v4.1.3 | MIT License | https://tailwindcss.com */
 @layer properties {
   @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
     ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
@@ -427,7 +426,6 @@
   embed,
   object {
     display: block;
-    /* vertical-align: middle; */
   }
 
   img,
@@ -6559,7 +6557,6 @@
   :is(
       .\*\:data-\[slot\=select-value\]\:line-clamp-1 > *
     )[data-slot="select-value"] {
-    /* -webkit-line-clamp: 1; */
     -webkit-box-orient: vertical;
     display: -webkit-box;
     overflow: hidden;
@@ -9183,10 +9180,6 @@
     display: none;
   }
 
-  /* .glass-effect {
-    -webkit-backdrop-filter: blur(20px);
-  } */
-
   .shadow-glow {
     box-shadow: 0 0 20px #3498db4d;
   }
@@ -9210,21 +9203,18 @@
   }
 
   .line-clamp-1 {
-    /* -webkit-line-clamp: 1; */
     -webkit-box-orient: vertical;
     display: -webkit-box;
     overflow: hidden;
   }
 
   .line-clamp-2 {
-    /* -webkit-line-clamp: 2; */
     -webkit-box-orient: vertical;
     display: -webkit-box;
     overflow: hidden;
   }
 
   .line-clamp-3 {
-    /* -webkit-line-clamp: 3; */
     -webkit-box-orient: vertical;
     display: -webkit-box;
     overflow: hidden;

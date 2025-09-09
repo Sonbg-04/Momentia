@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button } from '../ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 import { Badge } from '../ui/badge';
@@ -10,7 +10,6 @@ import {
   Users,
   Star,
   TrendingUp,
-  TrendingDown,
   Clock,
   Camera,
   MessageCircle,
@@ -20,11 +19,7 @@ import {
   Share2,
   Award,
   MapPin,
-  Phone,
-  Mail,
   ChevronRight,
-  Plus,
-  BarChart3,
   Target,
   Zap
 } from 'lucide-react';

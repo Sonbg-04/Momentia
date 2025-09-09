@@ -5,8 +5,6 @@ import { CustomerBookings } from "./customer/CustomerBookings";
 import { CustomerChat } from "./customer/CustomerChat";
 import { CustomerProfile } from "./customer/CustomerProfile";
 import { CustomerEditProfile } from "./customer/CustomerEditProfile";
-
-// CustomerWallet import removed - wallet features disabled
 import { AppLayoutWithSidebar } from "./AppLayoutWithSidebar";
 
 interface CustomerAppProps {

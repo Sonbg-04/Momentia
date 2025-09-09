@@ -1,16 +1,7 @@
-import React from "react";
-import { Button } from "../../ui/button";
 import { Badge } from "../../ui/badge";
 import { Card, CardContent } from "../../ui/card";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
-import {
-  MapPin,
-  Calendar,
-  Star,
-  Camera,
-  Award,
-  Edit,
-} from "lucide-react";
+import { MapPin, Calendar, Star, Camera, Award } from "lucide-react";
 
 interface ProfileHeaderProps {
   photographer: {
@@ -28,10 +19,7 @@ interface ProfileHeaderProps {
   onEdit: () => void;
 }
 
-export function ProfileHeader({
-  photographer,
-  onEdit,
-}: ProfileHeaderProps) {
+export function ProfileHeader({ photographer, onEdit }: ProfileHeaderProps) {
   return (
     <Card>
       <div className="relative">
@@ -52,9 +40,7 @@ export function ProfileHeader({
       <CardContent className="pt-12 pb-4">
         <div className="flex items-start justify-between mb-4">
           <div>
-            <h2 className="text-xl font-bold">
-              {photographer.name}
-            </h2>
+            <h2 className="text-xl font-bold">{photographer.name}</h2>
             <div className="flex items-center gap-4 text-sm text-gray-600 mt-1">
               <div className="flex items-center gap-1">
                 <MapPin className="w-3 h-3" />
@@ -70,11 +56,7 @@ export function ProfileHeader({
 
         <div className="flex flex-wrap gap-1 mb-4">
           {photographer.styles.map((style) => (
-            <Badge
-              key={style}
-              variant="secondary"
-              className="text-xs"
-            >
+            <Badge key={style} variant="secondary" className="text-xs">
               {style}
             </Badge>
           ))}
@@ -84,9 +66,7 @@ export function ProfileHeader({
           <div>
             <div className="flex items-center justify-center gap-1 mb-1">
               <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-              <span className="font-semibold">
-                {photographer.rating}
-              </span>
+              <span className="font-semibold">{photographer.rating}</span>
             </div>
             <p className="text-xs text-gray-600">
               {photographer.reviewCount} đánh giá
