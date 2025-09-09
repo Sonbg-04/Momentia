@@ -1,1 +1,0 @@
-// File đã được xóa - tính năng ví đã được loại bỏ khỏi ứng dụng
