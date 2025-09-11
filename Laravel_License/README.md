@@ -10,7 +10,7 @@
     + B1: Nếu đã cài đặt GitHub Desktop thì đăng nhập đầy đủ rồi nhấn vào 
           Clone Repository > URL > Dán link Github được ghim ở trong nhóm > Clone (Trong quá trình bị lỗi chỗ nào thì liên hệ ae trong nhóm hoặc nhóm trưởng để được xử lý kịp thời!)
 
-    + B2: Cài đặt môi trường NodeJS, XamPP, Composer đầy đủ rồi tạo 1 thư mục trong thư mục "htdocs" của XamPP để chạy trong XamPP và mở lên bằng VS Code
+    + B2: Cài đặt môi trường NodeJS, XamPP, Composer đầy đủ rồi tạo 1 thư mục trong thư mục "htdocs" của XamPP để chạy trong XamPP và mở lên bằng VS Code (XamPP cũng phải bật apache với mysql lên)
     
     + B3: Bắt đầu tạo Laravel bằng Composer:
           
@@ -32,7 +32,8 @@
           Chuyển toàn bộ file frontend trong thư mục Dang_Ngoc_Anh đã clone về máy 
           sang thư mục resources của framework Laravel
 
-          Copy nội dung trong file package.json và file vite.config trong thư mục License vào 2 file trong framework
+          Copy nội dung trong file package.json và file vite.config trong thư mục License vào 2 file trong framework 
+          (Cái này tùy thuộc vào phiên bản các gói của bạn đã cài đặt!)
 
           Sau khi copy xong rồi thì bật terminal của framework lên và chạy lệnh:
 
