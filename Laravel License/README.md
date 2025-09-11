@@ -32,13 +32,12 @@
           Chuyển toàn bộ file frontend trong thư mục Dang_Ngoc_Anh đã clone về máy 
           sang thư mục resources của framework Laravel
 
-          Copy nội dung trong file package.json và file vite.config trong thư mục Dang_Ngoc_Anh vào 2 file trong framework
+          Copy nội dung trong file package.json và file vite.config trong thư mục License vào 2 file trong framework
 
           Sau khi copy xong rồi thì bật terminal của framework lên và chạy lệnh:
 
                         npm i
                         npm run build
-                        npm run dev
           
                 Nếu có hiện đường link URL sau khi chạy xong 3 lệnh trên và không có
                 lỗi màu đỏ (vàng) thì là thành công!
