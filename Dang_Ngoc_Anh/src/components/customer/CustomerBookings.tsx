@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Badge } from "../ui/badge";
 import { Card, CardContent } from "../ui/card";
-import { BookingDetail } from "../BookingDetail";
+import { BookingDetail } from "../other/BookingDetail";
 import {
   DropdownMenu,
   DropdownMenuContent,

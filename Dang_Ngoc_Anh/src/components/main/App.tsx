@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { CustomerApp } from "./components/CustomerApp";
-import { PhotographerApp } from "./components/PhotographerApp";
-import { LandingPage } from "./components/LandingPage";
-import { PhotographerDiscovery } from "./components/PhotographerDiscovery";
-import { AllPhotographers } from "./components/AllPhotographers";
-import { SidebarDemo } from "./components/SidebarDemo";
-import { BookingDetailDemo } from "./components/BookingDetailDemo";
-import { ThemeProvider } from "./components/ui/theme-provider";
+import { CustomerApp } from "../customer/CustomerApp";
+import { PhotographerApp } from "../photographer/PhotographerApp";
+import { LandingPage } from "../other/LandingPage";
+import { PhotographerDiscovery } from "../photographer/PhotographerDiscovery";
+import { AllPhotographers } from "../other/AllPhotographers";
+import { SidebarDemo } from "../other/SidebarDemo";
+import { BookingDetailDemo } from "../other/BookingDetailDemo";
+import { ThemeProvider } from "../ui/theme-provider";
 
 type UserRole =
   | "customer"

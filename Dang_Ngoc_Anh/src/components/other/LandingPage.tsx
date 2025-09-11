@@ -1,7 +1,7 @@
 import React from "react";
-import { Button } from "./ui/button";
-import { ThemeToggle } from "./ui/theme-toggle";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { Button } from "../ui/button";
+import { ThemeToggle } from "../ui/theme-toggle";
+import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { FeaturedPhotographers } from "./FeaturedPhotographers";
 import {
   Camera,

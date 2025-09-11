@@ -10,7 +10,7 @@ import {
   SidebarMenuItem,
   SidebarMenuBadge,
   useSidebar,
-} from "./ui/sidebar";
+} from "../ui/sidebar";
 import {
   Home,
   Calendar,
@@ -23,7 +23,7 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "./ui/avatar";
+} from "../ui/avatar";
 
 interface MomentiaSidebarProps {
   onNavigate: (section: string) => void;

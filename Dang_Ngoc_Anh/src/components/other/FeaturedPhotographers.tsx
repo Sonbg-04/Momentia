@@ -1,8 +1,8 @@
-import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
-import { Card, CardContent } from "./ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { Button } from "../ui/button";
+import { Badge } from "../ui/badge";
+import { Card, CardContent } from "../ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { Star, MapPin, Calendar, ArrowRight } from "lucide-react";
 
 interface FeaturedPhotographersProps {

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { PhotographerAuth } from "./photographer/PhotographerAuth";
-import { PhotographerHome } from "./photographer/PhotographerHome";
-import { PhotographerBookings } from "./photographer/PhotographerBookings";
-import { PhotographerChat } from "./photographer/PhotographerChat";
-import { PhotographerProfile } from "./photographer/PhotographerProfile";
-import { PhotographerEditProfile } from "./photographer/PhotographerEditProfile";
-import { PhotographerChangePassword } from "./photographer/PhotographerChangePassword";
-import { AppLayoutWithSidebar } from "./AppLayoutWithSidebar";
+import { PhotographerAuth } from "./PhotographerAuth";
+import { PhotographerHome } from "./PhotographerHome";
+import { PhotographerBookings } from "./PhotographerBookings";
+import { PhotographerChat } from "./PhotographerChat";
+import { PhotographerProfile } from "./PhotographerProfile";
+import { PhotographerEditProfile } from "./PhotographerEditProfile";
+import { PhotographerChangePassword } from "./PhotographerChangePassword";
+import { AppLayoutWithSidebar } from "../other/AppLayoutWithSidebar";
 
 interface PhotographerAppProps {
   onBack: () => void;

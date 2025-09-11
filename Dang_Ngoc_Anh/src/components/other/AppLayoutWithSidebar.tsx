@@ -3,9 +3,9 @@ import {
   SidebarProvider,
   SidebarInset,
   SidebarTrigger,
-} from './ui/sidebar';
+} from '../ui/sidebar';
 import { MomentiaSidebar } from './MomentiaSidebar';
-import { Separator } from './ui/separator';
+import { Separator } from '../ui/separator';
 import { 
   Breadcrumb,
   BreadcrumbItem,
@@ -13,10 +13,10 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from './ui/breadcrumb';
-import { Button } from './ui/button';
-import { Badge } from './ui/badge';
-import { ThemeToggle } from './ui/theme-toggle';
+} from '../ui/breadcrumb';
+import { Button } from '../ui/button';
+import { Badge } from '../ui/badge';
+import { ThemeToggle } from '../ui/theme-toggle';
 import { Bell, TrendingUp } from 'lucide-react';
 
 interface AppLayoutWithSidebarProps {

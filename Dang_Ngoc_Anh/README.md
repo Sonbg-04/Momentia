@@ -29,12 +29,12 @@
     
     + B4: Sau khi đã tạo thành công framework Laravel rồi thì bạn sẽ cấu hình frontend vào trong framework:
           
-          Chuyển toàn bộ file frontend trong thư mục Dang_Ngoc_Anh đã clone về máy (trừ file json) 
+          Chuyển toàn bộ file frontend trong thư mục Dang_Ngoc_Anh đã clone về máy 
           sang thư mục resources của framework Laravel
 
-          File package.json trong thư mục Dang_Ngoc_Anh thì kết hợp với file package.json có trong framework và sử dụng file json trong framework (Copy chúng lên rồi hỏi chatGPT cách kết hợp lại thành 1 file)
+          Copy nội dung trong file package.json và file vite.config trong thư mục Dang_Ngoc_Anh vào 2 file trong framework
 
-          Sau khi kết hợp xong rồi thì bật terminal của framework lên và chạy lệnh:
+          Sau khi copy xong rồi thì bật terminal của framework lên và chạy lệnh:
 
                         npm i
                         npm run build
@@ -42,8 +42,6 @@
           
                 Nếu có hiện đường link URL sau khi chạy xong 3 lệnh trên và không có
                 lỗi màu đỏ (vàng) thì là thành công!
-          
-          Cấu hình lại file vite.config.js trong framework để chạy được frontend (dùng chatGPT hoặc liên hệ nhóm trưởng!)
 
           Ở thư mục views của framework, bạn sẽ tạo 1 file mới có đuôi .blade.php (welcome.blade.php) để chạy frontend sau khi cấu hình lại vite
 

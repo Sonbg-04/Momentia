@@ -1,11 +1,11 @@
 import { useState, useMemo } from 'react';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { Badge } from './ui/badge';
-import { Card, CardContent } from './ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
-import { ThemeToggle } from './ui/theme-toggle';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { Button } from '../ui/button';
+import { Input } from '../ui/input';
+import { Badge } from '../ui/badge';
+import { Card, CardContent } from '../ui/card';
+import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
+import { ThemeToggle } from '../ui/theme-toggle';
+import { ImageWithFallback } from '../figma/ImageWithFallback';
 import {
   ArrowLeft,
   Search,
@@ -29,7 +29,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from './ui/dropdown-menu';
+} from '../ui/dropdown-menu';
 
 interface AllPhotographersProps {
   onBack: () => void;

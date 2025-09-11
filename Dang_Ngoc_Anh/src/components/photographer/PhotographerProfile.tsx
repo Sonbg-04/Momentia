@@ -10,9 +10,9 @@ import {
 import { Switch } from "../ui/switch";
 import { PhotographerEditProfile } from "./PhotographerEditProfile";
 import { PhotographerChangePassword } from "./PhotographerChangePassword";
-import { ProfileHeader } from "./components/ProfileHeader";
-import { ReviewsSection } from "./components/ReviewsSection";
-import { SettingsMenu } from "./components/SettingsMenu";
+import { ProfileHeader } from "../photographer/photographer components/ProfileHeader";
+import { ReviewsSection } from "../photographer/photographer components/ReviewsSection";
+import { SettingsMenu } from "../photographer/photographer components/SettingsMenu";
 import { ShieldCheck, Smartphone, ArrowLeft } from "lucide-react";
 import {
   PHOTOGRAPHER_DATA,

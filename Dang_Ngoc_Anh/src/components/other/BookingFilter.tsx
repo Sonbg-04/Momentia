@@ -17,10 +17,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
   DropdownMenuSeparator,
-} from "./ui/dropdown-menu";
-import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
-import { useSidebar } from "./ui/sidebar";
+} from "../ui/dropdown-menu";
+import { Button } from "../ui/button";
+import { Badge } from "../ui/badge";
+import { useSidebar } from "../ui/sidebar";
 
 export interface FilterOption {
   id: string;
