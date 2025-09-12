@@ -1,33 +1,14 @@
 # =========================
-# PHP Project .gitignore
+# Laravel 12 Full Backup .gitignore
 # =========================
 
 # OS generated files
 .DS_Store
 Thumbs.db
 
-# Composer dependencies
-#/vendor/
-#composer.lock
-
-# Node.js dependencies (nếu có dùng frontend)
-node_modules/
+# Node.js logs (nếu có dùng frontend)
 npm-debug.log
 yarn-error.log
-package-lock.json
-
-# Environment & config
-#.env
-#*.env
-*.ini
-*.local
-
-# Logs & cache
-*.log
-cache/
-tmp/
-temp/
-*.tmp
 
 # IDE / Editor
 .vscode/
@@ -35,13 +16,7 @@ temp/
 *.sublime-workspace
 *.sublime-project
 
-# PHPUnit cache
-.phpunit.result.cache
-
 # Backup / swap files
 *.bak
 *.swp
 *.swo
-
-# Uploaded files (nếu không muốn đưa lên git)
-uploads/
