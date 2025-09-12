@@ -7,8 +7,8 @@
 Thumbs.db
 
 # Composer dependencies
-/vendor/
-composer.lock
+#/vendor/
+#composer.lock
 
 # Node.js dependencies (nếu có dùng frontend)
 node_modules/
