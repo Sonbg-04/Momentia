@@ -292,7 +292,9 @@ export function LandingPage({
                 <ImageWithFallback
                   src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=600&h=800&fit=crop&crop=center"
                   alt="Professional photographer at work"
-                  className="w-full h-[500px] object-cover"
+                  className="w-full max-w-xs sm:max-w-md lg:max-w-lg h-auto object-contain relative z-10
+               shadow-premium-xl filter group-hover:brightness-110 transition-all duration-500"
+
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
                 <div className="absolute bottom-6 left-6 text-white">
