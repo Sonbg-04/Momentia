@@ -117,3 +117,20 @@ npm run build
 php artisan serve
 # Nếu hiện link URL để hiển thị trang web tức là đã thành công!
 ```
+## 🤌 Hướng dẫn đồng bộ database của mysql trong xampp với database trong framework Laravel
+Làm theo các bước dưới đây:
+- B1: Bật xampp chạy mysql và apache. Xong truy cập đường dẫn "localhost/phpmyadmin" để tạo database rỗng!
+- B2: Sau khi tạo thì chọn database đã tạo và import dữ liệu từ file momentia.sql được lưu ở thư mục Database của framework Laravel (Nếu chưa có thì pull lại)
+- B3: Sửa file .env trong framework:
+```bash
+# Tìm đến DB_CONNECTION, bỏ hết dấu thăng và sửa như dưới đây
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=momentia
+# VD: database name của tôi là momentia!
+DB_USERNAME=root
+DB_PASSWORD=
+```
+Còn lại mọi người nhờ chatGPT để xử lý nhé! Xin cảm ơn.
+
