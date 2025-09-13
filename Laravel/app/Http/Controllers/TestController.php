@@ -71,6 +71,6 @@ class TestController extends Controller
             'fullname' => 'required|min:5|max:50',
             'email' => 'required|email'
         ]);
-        return 'Dữ liệu hợp lệ '. $validated['fullname'] . ' ' . $validated['email'];
+        return 'Dữ liệu hợp lệ ' . $validated['fullname'] . ' ' . $validated['email'];
     }
 }

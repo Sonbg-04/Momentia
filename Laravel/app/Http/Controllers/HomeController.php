@@ -11,4 +11,5 @@ class HomeController extends Controller
         $data = 16;
         return view('test', ['data' => $data]);
     }
+    
 }
