@@ -131,6 +131,8 @@ DB_DATABASE=momentia
 # VD: database name của tôi là momentia!
 DB_USERNAME=root
 DB_PASSWORD=
+
+SESSION_DRIVER=file
 ```
 Còn lại mọi người nhờ chatGPT để xử lý nhé! Xin cảm ơn.
 
