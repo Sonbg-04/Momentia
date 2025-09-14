@@ -25,73 +25,17 @@ Làm lần lượt các bước sau:
 Với ae dùng GitHub Desktop, chọn **file > clone repository > URL** dán đường link github của nhóm trưởng vào đó và nhấn clone.
 - B2: Mở VS Code cái framework đã clone về máy. Lúc này đây có thể sẽ thiếu 1 số file mà máy không clone được hết cụ thể thiếu các file liên quan đến cơ sở dữ liệu
 (.env và database.sqlite, ...)
-- B3: Tạo thủ công file .env và copy nội dung dưới đây
+- B3: Tạo thủ công file .env và copy nội dung từ file .env.example qua rồi chạy các lệnh dưới đây:
 ```bash
-APP_NAME=Laravel
-APP_ENV=local
-APP_KEY=base64:SHNX+kKXH1eTHdI+rqrNB5CXXDIOeICDJeionTNkr5s=
-APP_DEBUG=true
-APP_URL=http://localhost
+# Tự động thêm app_key về file .env
+php artisan key:generate
+```
+```bash
+# Clear cache và config
+php artisan config:clear
 
-APP_LOCALE=en
-APP_FALLBACK_LOCALE=en
-APP_FAKER_LOCALE=en_US
+php artisan cache:clear
 
-APP_MAINTENANCE_DRIVER=file
-# APP_MAINTENANCE_STORE=database
-
-PHP_CLI_SERVER_WORKERS=4
-
-BCRYPT_ROUNDS=12
-
-LOG_CHANNEL=stack
-LOG_STACK=single
-LOG_DEPRECATIONS_CHANNEL=null
-LOG_LEVEL=debug
-
-DB_CONNECTION=sqlite
-# DB_HOST=127.0.0.1
-# DB_PORT=3306
-# DB_DATABASE=laravel
-# DB_USERNAME=root
-# DB_PASSWORD=
-
-SESSION_DRIVER=database
-SESSION_LIFETIME=120
-SESSION_ENCRYPT=false
-SESSION_PATH=/
-SESSION_DOMAIN=null
-
-BROADCAST_CONNECTION=log
-FILESYSTEM_DISK=local
-QUEUE_CONNECTION=database
-
-CACHE_STORE=database
-# CACHE_PREFIX=
-
-MEMCACHED_HOST=127.0.0.1
-
-REDIS_CLIENT=phpredis
-REDIS_HOST=127.0.0.1
-REDIS_PASSWORD=null
-REDIS_PORT=6379
-
-MAIL_MAILER=log
-MAIL_SCHEME=null
-MAIL_HOST=127.0.0.1
-MAIL_PORT=2525
-MAIL_USERNAME=null
-MAIL_PASSWORD=null
-MAIL_FROM_ADDRESS="hello@example.com"
-MAIL_FROM_NAME="${APP_NAME}"
-
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
-AWS_DEFAULT_REGION=us-east-1
-AWS_BUCKET=
-AWS_USE_PATH_STYLE_ENDPOINT=false
-
-VITE_APP_NAME="${APP_NAME}"
 ```
 - B4: Sau khi tạo xong file .env thì chạy các lệnh dưới đây:
 ```bash
