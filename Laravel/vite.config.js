@@ -10,7 +10,7 @@ export default defineConfig({
             input: [
                 "resources/css/app.css",
                 "resources/js/app.js",
-                "resources/src/components/main/main.tsx"
+                "resources/src/components/main/Main.tsx"
             ],
             refresh: true,
         }),
