@@ -53,6 +53,7 @@ export function CustomerAuth({ onBack, onLogin }: CustomerAuthProps) {
         confirmPassword: "",
     });
 
+    // Login customer
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
         // Mock authentication
@@ -61,6 +62,7 @@ export function CustomerAuth({ onBack, onLogin }: CustomerAuthProps) {
         }, 1000);
     };
 
+    // Register customer
     const handleRegister = (e: React.FormEvent) => {
         e.preventDefault();
         if (registerForm.password !== registerForm.confirmPassword) {
@@ -77,6 +79,7 @@ export function CustomerAuth({ onBack, onLogin }: CustomerAuthProps) {
         }, 1000);
     };
 
+    // Other login customer
     const handleSocialLogin = (provider: string) => {
         // Mock social login
         setTimeout(() => {
