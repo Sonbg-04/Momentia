@@ -34,19 +34,20 @@ import {
     X,
 } from "lucide-react";
 
+import { useNavigate } from "react-router-dom";
+
 interface LandingPageProps {
-    onNavigate: (role: "customer" | "photographer") => void;
     onDiscoverPhotographers?: () => void;
     onViewAllPhotographers?: () => void;
     onBookPhotographer?: (photographerId: string) => void;
 }
 
 export function LandingPage({
-    onNavigate,
     onDiscoverPhotographers,
     onViewAllPhotographers,
     onBookPhotographer,
 }: LandingPageProps) {
+    const navigate = useNavigate();
     const [openFaqIndex, setOpenFaqIndex] = React.useState<number | null>(null);
     const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
@@ -128,13 +129,13 @@ export function LandingPage({
                             <ThemeToggle />
 
                             <Button
-                                onClick={() => onNavigate("photographer")}
+                                onClick={() => navigate("/photographer-auth-login")}
                                 className="hidden sm:flex sky-gradient text-white hover:opacity-90"
                             >
                                 Dành cho Nhiếp ảnh gia
                             </Button>
                             <Button
-                                onClick={() => onNavigate("customer")}
+                                onClick={() => navigate("/customer-auth-login")}
                                 className="sky-gradient hover:opacity-90"
                             >
                                 Đặt lịch ngay
@@ -191,7 +192,7 @@ export function LandingPage({
                                 <Button
                                     onClick={() => {
                                         setMobileMenuOpen(false);
-                                        onNavigate("customer");
+                                        navigate("/customer-auth-login");
                                     }}
                                     className="w-full mb-3 sky-gradient text-white"
                                 >
@@ -200,7 +201,7 @@ export function LandingPage({
                                 <Button
                                     onClick={() => {
                                         setMobileMenuOpen(false);
-                                        onNavigate("photographer");
+                                        navigate("/photographer-auth-login");
                                     }}
                                     variant="outline"
                                     className="w-full border-primary text-primary hover:bg-primary hover:text-white"
@@ -241,7 +242,7 @@ export function LandingPage({
 
                             <div className="flex flex-col sm:flex-row gap-4 mb-8">
                                 <Button
-                                    onClick={() => onNavigate("customer")}
+                                    onClick={() => navigate("/customer-auth-login")}
                                     size="lg"
                                     className="sky-gradient hover:opacity-90 text-lg px-8 py-4 h-auto text-white"
                                 >
@@ -263,7 +264,7 @@ export function LandingPage({
 
                             <div className="flex justify-center mb-8">
                                 <Button
-                                    onClick={() => onNavigate("photographer")}
+                                    onClick={() => navigate("/photographer-auth-login")}
                                     variant="ghost"
                                     className="text-muted-foreground hover:text-primary gap-2"
                                 >
@@ -700,7 +701,7 @@ export function LandingPage({
                         </Button>
                         <Button
                             variant="outline"
-                            onClick={() => onNavigate("customer")}
+                            onClick={() => navigate("/customer-auth-login")}
                             className="px-8 py-3"
                         >
                             Xem thêm tác phẩm
@@ -818,7 +819,7 @@ export function LandingPage({
                             <div className="flex items-center gap-3">
                                 <ImageWithFallback
                                     src="https://images.unsplash.com/photo-1494790108755-2616b612b1c5?w=40&h=40&fit=crop&crop=face"
-                                    alt="Customer"
+                                    alt="/customer-auth-login"
                                     className="w-10 h-10 rounded-full object-cover"
                                 />
                                 <div>
@@ -850,7 +851,7 @@ export function LandingPage({
                             <div className="flex items-center gap-3">
                                 <ImageWithFallback
                                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face"
-                                    alt="Customer"
+                                    alt="/customer-auth-login"
                                     className="w-10 h-10 rounded-full object-cover"
                                 />
                                 <div>
@@ -882,7 +883,7 @@ export function LandingPage({
                             <div className="flex items-center gap-3">
                                 <ImageWithFallback
                                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face"
-                                    alt="Photographer"
+                                    alt="/photographer-auth-login"
                                     className="w-10 h-10 rounded-full object-cover"
                                 />
                                 <div>
@@ -912,7 +913,7 @@ export function LandingPage({
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Button
-                            onClick={() => onNavigate("customer")}
+                            onClick={() => navigate("/customer-auth-login")}
                             size="lg"
                             className="bg-white text-sky-600 hover:bg-sky-50 text-lg px-8 py-4 h-auto"
                         >
@@ -920,7 +921,7 @@ export function LandingPage({
                             Đặt lịch ngay
                         </Button>
                         <Button
-                            onClick={() => onNavigate("photographer")}
+                            onClick={() => navigate("/photographer-auth-login")}
                             size="lg"
                             className="bg-white text-sky-600 hover:bg-sky-50 border border-sky-200 text-lg px-8 py-4 h-auto"
                         >

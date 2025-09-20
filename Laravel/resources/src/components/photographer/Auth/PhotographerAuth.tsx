@@ -1,80 +1,86 @@
-import React, { useState } from "react";
-import {
-    ArrowLeft,
-    Eye,
-    EyeOff,
-    Camera,
-    Mail,
-    Lock,
-    User,
-    Phone,
-    Heart,
-    Star,
-} from "lucide-react";
-import { Button } from "../ui/button";
-import { Input } from "../ui/input";
-import { Label } from "../ui/label";
+import { useState } from "react";
+import { Button } from "../../ui/button";
+import { Input } from "../../ui/input";
+import { Label } from "../../ui/label";
+import { Checkbox } from "../../ui/checkbox";
 import {
     Card,
     CardContent,
     CardDescription,
     CardHeader,
     CardTitle,
-} from "../ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import { Checkbox } from "../ui/checkbox";
+} from "../../ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/tabs";
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "../../ui/select";
+import {
+    Camera,
+    Eye,
+    EyeOff,
+    Mail,
+    Phone,
+    User,
+    Calendar,
+    MapPin,
+    ArrowLeft,
+    Sparkles,
+    Shield,
+    Award,
+    Lock,
+    CheckCircle,
+    TrendingUp,
+} from "lucide-react";
 
-interface CustomerAuthProps {
-    onBack: () => void;
+import { useNavigate, useLocation } from "react-router-dom";
+
+interface PhotographerAuthProps {
     onLogin: () => void;
+    onBack?: () => void;
 }
 
-export function CustomerAuth({ onBack, onLogin }: CustomerAuthProps) {
+export function PhotographerAuth({ onLogin, onBack }: PhotographerAuthProps) {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const currentTab = location.pathname.includes("login")
+        ? "login"
+        : "register";
+
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-    const [acceptTerms, setAcceptTerms] = useState(false);
-    const [rememberMe, setRememberMe] = useState(false);
     const [loginForm, setLoginForm] = useState({
         email: "",
         password: "",
     });
+    const [rememberMe, setRememberMe] = useState(false);
     const [registerForm, setRegisterForm] = useState({
         fullName: "",
         email: "",
         phone: "",
+        dateOfBirth: "",
         password: "",
         confirmPassword: "",
+        workLocation: "",
+        experience: "",
+        equipment: "",
     });
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
-        // Mock authentication
-        setTimeout(() => {
-            onLogin();
-        }, 1000);
+        onLogin();
     };
 
     const handleRegister = (e: React.FormEvent) => {
         e.preventDefault();
-        if (registerForm.password !== registerForm.confirmPassword) {
-            alert("Mật khẩu xác nhận không khớp!");
-            return;
-        }
-        if (!acceptTerms) {
-            alert("Vui lòng đồng ý với điều khoản sử dụng!");
-            return;
-        }
-        // Mock registration
-        setTimeout(() => {
-            onLogin();
-        }, 1000);
+        onLogin();
     };
 
     const handleSocialLogin = (provider: string) => {
-        // Mock social login
-        setTimeout(() => {
-            onLogin();
-        }, 500);
+        onLogin();
     };
 
     return (
@@ -95,15 +101,16 @@ export function CustomerAuth({ onBack, onLogin }: CustomerAuthProps) {
 
             {/* Header with back button */}
             <div className="p-4 relative z-10">
-                <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={onBack}
-                    className="hover:bg-primary/10 rounded-full"
-                >
-                    <ArrowLeft className="h-4 w-4 mr-2" />
-                    Quay lại
-                </Button>
+                {onBack && (
+                    <Button
+                        variant="ghost"
+                        onClick={onBack}
+                        className="hover:bg-primary/10 rounded-full"
+                    >
+                        <ArrowLeft className="w-4 h-4 mr-2" />
+                        Về trang chính
+                    </Button>
+                )}
             </div>
 
             <div className="flex items-center justify-center min-h-[calc(100vh-80px)]">
@@ -115,47 +122,58 @@ export function CustomerAuth({ onBack, onLogin }: CustomerAuthProps) {
                                 <Camera className="w-10 h-10 text-white" />
                             </div>
                             <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg animate-pulse-glow">
-                                <Heart className="w-4 h-4 text-white" />
+                                <Sparkles className="w-4 h-4 text-white" />
                             </div>
                         </div>
                         <h1 className="text-3xl font-bold mb-2">
-                            <span className="text-sky-gradient">Momentia</span>
+                            <span className="text-sky-gradient">Momentia</span>{" "}
+                            <span className="text-primary">Pro</span>
                         </h1>
                         <p className="text-muted-foreground text-lg">
-                            Nền tảng đặt lịch chụp ảnh hàng đầu Việt Nam
+                            Nền tảng dành cho nhiếp ảnh gia chuyên nghiệp
                         </p>
 
                         {/* Benefits */}
                         <div className="grid grid-cols-3 gap-4 mt-6 p-4 bg-card/50 backdrop-blur-sm rounded-2xl border border-primary/20">
                             <div className="text-center">
                                 <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-2">
-                                    <Camera className="w-5 h-5 text-primary" />
+                                    <Award className="w-5 h-5 text-primary" />
                                 </div>
                                 <p className="text-xs text-muted-foreground">
-                                    5000+ Photographer
+                                    Tăng thu nhập
                                 </p>
                             </div>
                             <div className="text-center">
                                 <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-2">
-                                    <Heart className="w-5 h-5 text-primary" />
+                                    <Shield className="w-5 h-5 text-primary" />
                                 </div>
                                 <p className="text-xs text-muted-foreground">
-                                    100% Hài lòng
+                                    Bảo mật cao
                                 </p>
                             </div>
                             <div className="text-center">
                                 <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-2">
-                                    <Star className="w-5 h-5 text-primary" />
+                                    <TrendingUp className="w-5 h-5 text-primary" />
                                 </div>
                                 <p className="text-xs text-muted-foreground">
-                                    4.9/5 Đánh giá
+                                    Công cụ Pro
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <Tabs defaultValue="login" className="w-full">
-                        <TabsList className="grid w-full grid-cols-2 bg-muted/50 backdrop-blur-sm mb-6">
+                    <Tabs
+                        value={currentTab}
+                        onValueChange={(val) => {
+                            navigate(
+                                val == "login"
+                                    ? "/photographer-auth-login"
+                                    : "/photographer-auth-register"
+                            );
+                        }}
+                        className="w-full"
+                    >
+                        <TabsList className="grid w-full grid-cols-2 bg-muted/50 backdrop-blur-sm">
                             <TabsTrigger
                                 value="login"
                                 className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
@@ -177,7 +195,7 @@ export function CustomerAuth({ onBack, onLogin }: CustomerAuthProps) {
                                         Đăng nhập
                                     </CardTitle>
                                     <CardDescription className="text-base">
-                                        Truy cập tài khoản khách hàng của bạn
+                                        Truy cập tài khoản nhiếp ảnh gia của bạn
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent>
@@ -190,14 +208,14 @@ export function CustomerAuth({ onBack, onLogin }: CustomerAuthProps) {
                                                 htmlFor="login-email"
                                                 className="text-sm font-medium"
                                             >
-                                                Email của bạn
+                                                Email nhiếp ảnh gia
                                             </Label>
                                             <div className="relative">
                                                 <Mail className="absolute left-3 top-3 h-5 w-5 text-primary/60" />
                                                 <Input
                                                     id="login-email"
                                                     type="email"
-                                                    placeholder="email@example.com"
+                                                    placeholder="photographer@momentia.vn"
                                                     className="pl-11 h-12 border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-background/50"
                                                     value={loginForm.email}
                                                     onChange={(e) =>
@@ -281,6 +299,11 @@ export function CustomerAuth({ onBack, onLogin }: CustomerAuthProps) {
                                                 <Button
                                                     variant="link"
                                                     className="text-sm p-0 h-auto text-primary hover:text-primary/80"
+                                                    onClick={() =>
+                                                        alert(
+                                                            "Đã gửi email khôi phục mật khẩu!"
+                                                        )
+                                                    }
                                                 >
                                                     Quên mật khẩu?
                                                 </Button>
@@ -292,7 +315,7 @@ export function CustomerAuth({ onBack, onLogin }: CustomerAuthProps) {
                                             className="w-full h-12 bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300"
                                         >
                                             <Camera className="w-5 h-5 mr-2" />
-                                            Đăng nhập và đặt lịch
+                                            Đăng nhập
                                         </Button>
                                     </form>
 
@@ -344,18 +367,17 @@ export function CustomerAuth({ onBack, onLogin }: CustomerAuthProps) {
                                                 variant="outline"
                                                 className="border-primary/20 hover:bg-primary/5 hover:border-primary/40"
                                                 onClick={() =>
-                                                    handleSocialLogin(
-                                                        "facebook"
-                                                    )
+                                                    handleSocialLogin("apple")
                                                 }
                                             >
                                                 <svg
-                                                    className="w-4 h-4 mr-2 fill-current"
+                                                    className="w-4 h-4 mr-2"
                                                     viewBox="0 0 24 24"
+                                                    fill="currentColor"
                                                 >
-                                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                                    <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
                                                 </svg>
-                                                Facebook
+                                                Apple
                                             </Button>
                                         </div>
                                     </div>
@@ -370,7 +392,8 @@ export function CustomerAuth({ onBack, onLogin }: CustomerAuthProps) {
                                         Đăng ký tài khoản
                                     </CardTitle>
                                     <CardDescription className="text-base">
-                                        Tham gia cộng đồng khách hàng Momentia
+                                        Tham gia cộng đồng nhiếp ảnh gia
+                                        Momentia Pro
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent>
@@ -479,13 +502,158 @@ export function CustomerAuth({ onBack, onLogin }: CustomerAuthProps) {
                                                         </div>
                                                     </div>
                                                 </div>
+
+                                                <div className="space-y-2">
+                                                    <Label htmlFor="register-dob">
+                                                        Ngày sinh *
+                                                    </Label>
+                                                    <div className="relative">
+                                                        <Calendar className="absolute left-3 top-3 h-4 w-4 text-primary/60" />
+                                                        <Input
+                                                            id="register-dob"
+                                                            type="date"
+                                                            className="pl-10 border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20"
+                                                            value={
+                                                                registerForm.dateOfBirth
+                                                            }
+                                                            onChange={(e) =>
+                                                                setRegisterForm(
+                                                                    {
+                                                                        ...registerForm,
+                                                                        dateOfBirth:
+                                                                            e
+                                                                                .target
+                                                                                .value,
+                                                                    }
+                                                                )
+                                                            }
+                                                            required
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {/* Thông tin nghề nghiệp */}
+                                        <div className="space-y-4 pt-4 border-t border-primary/10">
+                                            <div className="flex items-center gap-2 mb-3">
+                                                <Camera className="w-4 h-4 text-primary" />
+                                                <h4 className="font-medium text-sm">
+                                                    Thông tin nghề nghiệp
+                                                </h4>
+                                            </div>
+
+                                            <div className="grid grid-cols-1 gap-4">
+                                                <div className="space-y-2">
+                                                    <Label htmlFor="register-work-location">
+                                                        Địa điểm làm việc chính
+                                                        *
+                                                    </Label>
+                                                    <div className="relative">
+                                                        <MapPin className="absolute left-3 top-3 h-4 w-4 text-primary/60" />
+                                                        <Input
+                                                            id="register-work-location"
+                                                            placeholder="Hà Nội, TP.HCM, Đà Nẵng..."
+                                                            className="pl-10 border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20"
+                                                            value={
+                                                                registerForm.workLocation
+                                                            }
+                                                            onChange={(e) =>
+                                                                setRegisterForm(
+                                                                    {
+                                                                        ...registerForm,
+                                                                        workLocation:
+                                                                            e
+                                                                                .target
+                                                                                .value,
+                                                                    }
+                                                                )
+                                                            }
+                                                            required
+                                                        />
+                                                    </div>
+                                                </div>
+
+                                                <div className="space-y-2">
+                                                    <Label htmlFor="register-experience">
+                                                        Kinh nghiệm chụp ảnh *
+                                                    </Label>
+                                                    <Select
+                                                        value={
+                                                            registerForm.experience
+                                                        }
+                                                        onValueChange={(
+                                                            value
+                                                        ) =>
+                                                            setRegisterForm({
+                                                                ...registerForm,
+                                                                experience:
+                                                                    value,
+                                                            })
+                                                        }
+                                                        required
+                                                    >
+                                                        <SelectTrigger className="border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20">
+                                                            <SelectValue placeholder="Chọn số năm kinh nghiệm" />
+                                                        </SelectTrigger>
+                                                        <SelectContent>
+                                                            <SelectItem value="newbie">
+                                                                Mới bắt đầu
+                                                                (dưới 1 năm)
+                                                            </SelectItem>
+                                                            <SelectItem value="year-1">
+                                                                1 năm
+                                                            </SelectItem>
+                                                            <SelectItem value="year-2">
+                                                                2 năm
+                                                            </SelectItem>
+                                                            <SelectItem value="year-3">
+                                                                3 năm
+                                                            </SelectItem>
+                                                            <SelectItem value="year-4">
+                                                                4 năm
+                                                            </SelectItem>
+                                                            <SelectItem value="year-5-plus">
+                                                                5+ năm
+                                                            </SelectItem>
+                                                            <SelectItem value="expert">
+                                                                Chuyên gia (10+
+                                                                năm)
+                                                            </SelectItem>
+                                                        </SelectContent>
+                                                    </Select>
+                                                </div>
+
+                                                <div className="space-y-2">
+                                                    <Label htmlFor="register-equipment">
+                                                        Thiết bị chụp ảnh chính
+                                                        *
+                                                    </Label>
+                                                    <Input
+                                                        id="register-equipment"
+                                                        placeholder="Canon R5, Sony A7IV, Nikon Z7..."
+                                                        className="border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20"
+                                                        value={
+                                                            registerForm.equipment
+                                                        }
+                                                        onChange={(e) =>
+                                                            setRegisterForm({
+                                                                ...registerForm,
+                                                                equipment:
+                                                                    e.target
+                                                                        .value,
+                                                            })
+                                                        }
+                                                        required
+                                                    />
+                                                </div>
                                             </div>
                                         </div>
 
                                         {/* Bảo mật */}
                                         <div className="space-y-4 pt-4 border-t border-primary/10">
                                             <div className="flex items-center gap-2 mb-3">
-                                                <Lock className="w-4 h-4 text-primary" />
+                                                <Shield className="w-4 h-4 text-primary" />
                                                 <h4 className="font-medium text-sm">
                                                     Bảo mật tài khoản
                                                 </h4>
@@ -546,7 +714,7 @@ export function CustomerAuth({ onBack, onLogin }: CustomerAuthProps) {
                                                         Xác nhận mật khẩu *
                                                     </Label>
                                                     <div className="relative">
-                                                        <Lock className="absolute left-3 top-3 h-4 w-4 text-primary/60" />
+                                                        <CheckCircle className="absolute left-3 top-3 h-4 w-4 text-primary/60" />
                                                         <Input
                                                             id="register-confirm-password"
                                                             type={
@@ -592,63 +760,12 @@ export function CustomerAuth({ onBack, onLogin }: CustomerAuthProps) {
                                             </div>
                                         </div>
 
-                                        {/* Terms */}
-                                        <div className="bg-accent/30 border border-primary/10 rounded-xl p-3 sm:p-4">
-                                            <div className="flex items-start space-x-3">
-                                                <Checkbox
-                                                    id="terms"
-                                                    checked={acceptTerms}
-                                                    onCheckedChange={(
-                                                        checked
-                                                    ) =>
-                                                        setAcceptTerms(
-                                                            checked as boolean
-                                                        )
-                                                    }
-                                                    className="mt-1 border-primary/40 data-[state=checked]:bg-primary data-[state=checked]:border-primary flex-shrink-0"
-                                                />
-                                                <div className="flex-1 min-w-0">
-                                                    <Label
-                                                        htmlFor="terms"
-                                                        className="text-sm leading-[1.6] text-foreground/90 cursor-pointer block"
-                                                    >
-                                                        <span className="block mb-1 break-words">
-                                                            Tôi đồng ý với{" "}
-                                                            <Button
-                                                                variant="link"
-                                                                className="p-0 h-auto text-sm text-primary hover:text-primary/80 underline font-medium inline whitespace-nowrap"
-                                                            >
-                                                                Điều khoản sử
-                                                                dụng
-                                                            </Button>{" "}
-                                                            và{" "}
-                                                            <Button
-                                                                variant="link"
-                                                                className="p-0 h-auto text-sm text-primary hover:text-primary/80 underline font-medium inline whitespace-nowrap"
-                                                            >
-                                                                Chính sách bảo
-                                                                mật
-                                                            </Button>{" "}
-                                                            của Momentia
-                                                        </span>
-                                                    </Label>
-                                                    <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
-                                                        Bằng việc đăng ký, bạn
-                                                        xác nhận đã đọc và hiểu
-                                                        các điều khoản của chúng
-                                                        tôi
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-
                                         <Button
                                             type="submit"
-                                            className="w-full h-12 bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 mt-6 disabled:opacity-50 disabled:cursor-not-allowed"
-                                            disabled={!acceptTerms}
+                                            className="w-full h-12 bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 mt-6"
                                         >
-                                            <Heart className="w-5 h-5 mr-2" />
-                                            Tạo tài khoản và bắt đầu
+                                            <Camera className="w-5 h-5 mr-2" />
+                                            Đăng ký tài khoản Pro
                                         </Button>
 
                                         {/* Terms */}
@@ -667,7 +784,7 @@ export function CustomerAuth({ onBack, onLogin }: CustomerAuthProps) {
                                             >
                                                 Chính sách bảo mật
                                             </Button>{" "}
-                                            của Momentia
+                                            của Momentia Pro.
                                         </p>
                                     </form>
                                 </CardContent>
