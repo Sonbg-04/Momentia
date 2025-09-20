@@ -52,12 +52,11 @@ php artisan migrate --seed
 npm i
 ```
 ```bash
-# Build frontend
-npm run build
-# Khi build mà không phát sinh ra lỗi đỏ thì là thành công!
+# Chạy lệnh dưới đây để mở server cho laravel truy cập được
+npm run dev
 ```
 ```bash
-# Sau khi xong tất cả câu lệnh trên thì chạy câu lệnh này là xong
+# Sau khi xong tất cả câu lệnh trên thì mở terminal mới chạy câu lệnh này là xong
 php artisan serve
 # Nếu hiện link URL để hiển thị trang web tức là đã thành công!
 ```
